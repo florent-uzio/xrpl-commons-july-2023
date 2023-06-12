@@ -16,5 +16,8 @@
     "dotenv": "^16.1.4",
     "ts-node": "^10.9.1",
     "xrpl": "^2.7.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.1.3"
   }
 }
