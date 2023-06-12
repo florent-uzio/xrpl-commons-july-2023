@@ -4,6 +4,7 @@
   "description": "Introduction to the XRPL",
   "main": "index.ts",
   "scripts": {
+    "check-types": "tsc",
     "start": "ts-node src/index.ts"
   },
   "keywords": [
