@@ -1,4 +1,3 @@
-import { acceptNftOffer } from "./transactions";
 import { WALLET_2 } from "./wallet";
 import { getXrplClient } from "./xrpl-client";
 
@@ -31,10 +30,10 @@ const main = async () => {
   //     { wallet: WALLET_1 }
   //   );
 
-  await acceptNftOffer(
-    { NFTokenSellOffer: "16BD0F642DD356DFE735371A24AC3CAB1CBBFB3D43BCAA170A8C7015A00D901F" },
-    { wallet: WALLET_2 }
-  );
+  //   await acceptNftOffer(
+  //     { NFTokenSellOffer: "16BD0F642DD356DFE735371A24AC3CAB1CBBFB3D43BCAA170A8C7015A00D901F" },
+  //     { wallet: WALLET_2 }
+  //   );
 
   await client.disconnect();
 };
