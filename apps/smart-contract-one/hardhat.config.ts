@@ -9,13 +9,13 @@ const PRIVATE_ACCOUNT_KEY = process.env.PRIVATE_KEY ?? "";
 const config: HardhatUserConfig = {
   solidity: "0.8.19",
   networks: {
-    xrplOld: {
+    evmv1: {
       url: "https://rpc-evm-sidechain.xrpl.org",
       chainId: 1440001,
       accounts: [PRIVATE_ACCOUNT_KEY],
     },
-    xrpl: {
-      url: "https://witness-evm-sidechain.peersyst.tech",
+    evmv2: {
+      url: "https://rpc-evm-poa-sidechain.peersyst.tech",
       chainId: 1440002,
       accounts: [PRIVATE_ACCOUNT_KEY],
     },

@@ -2,7 +2,7 @@
 pragma solidity ^0.8.19;
 
 contract FirstContract {
-  string message = "Initial Message";
+  string message = "Initial Message Test";
   address payable public owner;
 
   constructor() {
