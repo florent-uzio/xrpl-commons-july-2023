@@ -1,0 +1,21 @@
+{
+  "name": "smart-contract-one",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@nomicfoundation/hardhat-toolbox": "^3.0.0",
+    "hardhat": "^2.15.0",
+    "ts-node": "^10.9.1"
+  },
+  "dependencies": {
+    "web3": "^4.0.1",
+    "dotenv": "^16.1.4"
+  }
+}
