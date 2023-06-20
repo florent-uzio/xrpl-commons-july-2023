@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "first-interaction": "ts-node ./interactions/first",
+    "deploy-first": "hardhat run --network evmv2 scripts/deploy-first.ts"
   },
   "keywords": [],
   "author": "",
