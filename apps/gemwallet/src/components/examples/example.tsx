@@ -24,14 +24,14 @@ export const Example = () => {
 
       <form onSubmit={handleSubmit(submitHandler)}>
         <Stack direction="column" spacing={8}>
-          <FormControl id="firstName">
+          <FormControl id="firstName" isRequired>
             <Stack direction={{ base: "column" }}>
               <FormLabel>First Name</FormLabel>
               <Input {...register("firstName")} />
             </Stack>
           </FormControl>
 
-          <FormControl id="lastName">
+          <FormControl id="lastName" isRequired>
             <Stack direction={{ base: "column" }}>
               <FormLabel>Last Name</FormLabel>
               <Input {...register("lastName")} />
