@@ -43,6 +43,7 @@ function App() {
           <option value={Action.Example}>Example</option>
           <option value={Action.SendPayment}>Send Payment</option>
           <option value={Action.MintNft}>Mint NFT</option>
+          <option value={Action.CreateNftOffer}>Create NFT Offer</option>
         </Select>
 
         {getComponent()}
