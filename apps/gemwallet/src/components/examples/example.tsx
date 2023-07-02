@@ -1,34 +1,39 @@
-import { Button, Flex, FormControl, FormLabel, Input, Stack, Text } from "@chakra-ui/react";
-import { SubmitHandler, useForm } from "react-hook-form";
-import { ExampleFormState } from "./example.types";
+import { Button, Code, Flex, FormControl, FormLabel, Input, Stack, Text } from "@chakra-ui/react"
+import { SubmitHandler, useForm } from "react-hook-form"
+import { useGemWallet } from "../../shared/contexts"
+import { ExampleFormState } from "./example.types"
 
 export const Example = () => {
-  const { register, handleSubmit } = useForm<ExampleFormState>();
+  const { register, handleSubmit } = useForm<ExampleFormState>()
+  const { isInstalled } = useGemWallet()
 
   const submitHandler: SubmitHandler<ExampleFormState> = (values) => {
-    alert(JSON.stringify(values, undefined, 2));
-  };
+    alert(JSON.stringify(values, undefined, 2))
+  }
 
   return (
-    <>
-      <Text fontSize="2xl" mb="6">
-        Example
+    <Stack spacing="6">
+      <Text fontWeight="bold" fontSize="2xl">
+        Example to use forms with Chakra UI and React Hook Form
       </Text>
+
+      <Stack>
+        <Text>{`Is GemWallet installed? ${isInstalled ? "YES" : "NO"}`}</Text>
+        <Code p="2" borderRadius="xl" children={`const { isInstalled } = useGemWallet()`} />
+      </Stack>
 
       <form onSubmit={handleSubmit(submitHandler)}>
         <Stack direction="column" spacing={8}>
           <FormControl id="firstName">
             <Stack direction={{ base: "column" }}>
-              <FormLabel variant="inline">First Name</FormLabel>
+              <FormLabel>First Name</FormLabel>
               <Input {...register("firstName")} />
             </Stack>
           </FormControl>
 
-          <FormControl>
+          <FormControl id="lastName">
             <Stack direction={{ base: "column" }}>
-              <FormLabel id="lastName" variant="inline">
-                Last Name
-              </FormLabel>
+              <FormLabel>Last Name</FormLabel>
               <Input {...register("lastName")} />
             </Stack>
           </FormControl>
@@ -40,6 +45,6 @@ export const Example = () => {
           </Button>
         </Flex>
       </form>
-    </>
-  );
-};
+    </Stack>
+  )
+}
