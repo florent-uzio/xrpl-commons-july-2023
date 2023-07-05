@@ -1,6 +1,6 @@
 # XRPL Commons - XRPL Training July 2023
 
-This is a turborepo containing different applications that we will use on the 6th and 7th of July 2023.
+This is a [turborepo](https://turbo.build/repo) containing different applications that we will use on the 6th and 7th of July 2023.
 
 ## Requirements
 
