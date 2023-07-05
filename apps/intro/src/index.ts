@@ -1,12 +1,11 @@
-import { WALLET_2 } from "./wallet";
-import { getXrplClient } from "./xrpl-client";
+import { getXrplClient } from "./xrpl-client"
 
-const client = getXrplClient();
+const client = getXrplClient()
 
 const main = async () => {
-  await client.connect();
+  await client.connect()
 
-  await client.fundWallet(WALLET_2);
+  // await client.fundWallet(WALLET_2);
 
   //   await sendPaymentSimple(
   //     { Destination: WALLET_2.address, Amount: xrpToDrops(20) },
@@ -35,7 +34,44 @@ const main = async () => {
   //     { wallet: WALLET_2 }
   //   );
 
-  await client.disconnect();
-};
+  /**
+   * Multi Signing
+   */
 
-main();
+  // await setSigners(
+  //   {
+  //     SignerEntries: [
+  //       {
+  //         SignerEntry: {
+  //           Account: WALLET_2.address,
+  //           SignerWeight: 1,
+  //         },
+  //       },
+  //       {
+  //         SignerEntry: {
+  //           Account: WALLET_3.address,
+  //           SignerWeight: 1,
+  //         },
+  //       },
+  //     ],
+  //     SignerQuorum: 2,
+  //   },
+  //   { wallet: WALLET_1 }
+  // )
+
+  // const payment: Payment = {
+  //   TransactionType: "Payment",
+  //   Account: WALLET_1.address,
+  //   Destination: WALLET_4.address,
+  //   Amount: "1000000",
+  // }
+
+  // const signature1 = await signTransaction(payment, { wallet: WALLET_2, multiSign: true }, 2)
+  // const signature2 = await signTransaction(payment, { wallet: WALLET_3, multiSign: true }, 2)
+
+  // await sendPaymentMultisign([signature1.tx_blob, signature2.tx_blob])
+
+  await client.disconnect()
+}
+
+main()

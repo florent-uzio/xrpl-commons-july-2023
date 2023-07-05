@@ -1,3 +1,3 @@
-import { Wallet } from "xrpl";
+import { Wallet } from "xrpl"
 
-export type TxnOptions = { wallet: Wallet; showLogs?: boolean };
+export type TxnOptions = { wallet: Wallet; showLogs?: boolean; multiSign?: boolean }
