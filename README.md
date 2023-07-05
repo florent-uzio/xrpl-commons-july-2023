@@ -27,7 +27,7 @@ Run `npm i` at the root of this project to install all the dependencies.
 
 - xrpl.org: https://xrpl.org/public-servers.html
 
-Testnet WSS required for xrpl.js: wss://s.altnet.rippletest.net:51233/
+Testnet WSS required for xrpl.js: `wss://s.altnet.rippletest.net:51233/`
 
 ### GemWallet
 
