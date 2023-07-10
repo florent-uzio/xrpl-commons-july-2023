@@ -1,38 +1,41 @@
-import { isInstalled } from "@gemwallet/api";
-import { ReactNode, createContext, useContext, useEffect, useState } from "react";
+import { isInstalled } from "@gemwallet/api"
+import { ReactNode, createContext, useContext, useEffect, useState } from "react"
 
 type GemWalletApi = {
-  isInstalled: boolean;
-};
+  isInstalled: boolean
+}
 
 const GemWalletContext = createContext<GemWalletApi>({
   isInstalled: false,
-});
+})
 
 type GemWalletProviderProps = {
-  children: ReactNode;
-};
+  children: ReactNode
+}
 
 export const GemWalletProvider = ({ children }: GemWalletProviderProps) => {
-  const [api, setApi] = useState<GemWalletApi>({ isInstalled: false });
+  const [api, setApi] = useState<GemWalletApi>({ isInstalled: false })
 
   useEffect(() => {
     setTimeout(() => {
       isInstalled()
-        .then((res) => setApi(res.result))
+        .then((res) => {
+          // console.log(res)
+          setApi(res.result)
+        })
         .catch((err) => {
-          console.error(err);
-        });
-    }, 1000);
-  }, []);
+          console.error(err)
+        })
+    }, 1000)
+  }, [])
 
-  return <GemWalletContext.Provider value={api}>{children}</GemWalletContext.Provider>;
-};
+  return <GemWalletContext.Provider value={api}>{children}</GemWalletContext.Provider>
+}
 
 export const useGemWallet = () => {
-  const context = useContext(GemWalletContext);
+  const context = useContext(GemWalletContext)
   if (!context) {
-    throw new Error("useGemWallet must be used inside GemWalletProvider");
+    throw new Error("useGemWallet must be used inside GemWalletProvider")
   }
-  return context;
-};
+  return context
+}

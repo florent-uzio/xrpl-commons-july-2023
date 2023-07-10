@@ -13,7 +13,8 @@
   "author": "Florent Uzio",
   "license": "ISC",
   "dependencies": {
-    "xrpl": "^2.8.1"
+    "xrpl": "^2.8.1",
+    "xumm-sdk": "^1.8.6"
   },
   "devDependencies": {
     "typescript": "^5.1.3",
